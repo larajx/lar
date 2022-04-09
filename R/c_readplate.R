@@ -30,7 +30,7 @@ c_readplate <- function(file_path, sheet, ...) {
         )
 
 
-        final_file <- plater::read_plate(file = file1)
+        final_file <- plater::read_plate(file = file1) #throws an error saying it cannot tell how many columns are in the plate.I wonder if the csv file is including blank spaces, thinking it is data.  unsure how to proceed.
         unlink(file1)
         final_file
 }
