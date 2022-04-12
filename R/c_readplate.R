@@ -1,4 +1,4 @@
-#' Read a plate setup from an excel file and convert to tidy format.  [UNDER CONSTRUCTION]
+#' Read a plate setup from an excel file and convert to tidy format.
 #'
 #' @param file_path
 #' @param sheet
@@ -11,7 +11,8 @@
 c_readplate <- function(file_path, sheet, range, ...) {
 
         library(readxl,
-                plater)
+                plater,
+                readr)
 
         working_file <-  readxl::read_excel(path = file_path,...)
 
@@ -21,16 +22,14 @@ c_readplate <- function(file_path, sheet, range, ...) {
                          tmpdir = tempdir(),
                          fileext = ".csv")
 
-        write.table(
+        readr::write_csv(
                 working_file,
-                file = file1,
-                row.names = FALSE,
+                file = "/Users/luisrodriguez/Desktop/practicing.csv",
                 na = "",
-                sep = ","
-        )
+                )
 
 
-        final_file <- plater::read_plate(file = file1) # throws an error saying it cannot tell how many columns are in the plate. I wonder if the csv file is including blank spaces, thinking it is data.  unsure how to proceed.
+        final_file <- plater::read_plate(file = "/Users/luisrodriguez/Desktop/practicing.csv") # throws an error saying it cannot tell how many columns are in the plate. I wonder if the csv file is including blank spaces, thinking it is data.  unsure how to proceed.
         unlink(file1)
         final_file
 }
