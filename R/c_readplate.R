@@ -12,7 +12,7 @@ c_readplate <- function(file_path, sheet, range, ...) {
 
         library(readxl,
                 plater,
-                readr)
+                tidyverse)
 
         working_file <-  readxl::read_excel(path = file_path,...)
 
