@@ -8,7 +8,6 @@
 #' @examples
 ctod <- function(df) {
 
-        path_name <- str_c("/Users/luisrodriguez/Desktop/", substitute(df), ".csv")
+        path_name <- str_c("/Users/l.rodriguez/Library/CloudStorage/OneDrive-MNEMO/Desktop/", substitute(df), ".csv")
         write.csv(df, path_name)
 }
-
